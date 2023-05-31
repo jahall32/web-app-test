@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="navbar.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* change navbar for just this page */
+        ul{
+            background-color: white;
+        }
+
+        li a {
+            color: black;
+        }
+
+        li a:hover {
+    background-color: rgb(90, 0, 142);
+    color: white;
+
+}
+
+
+        .hero-section {
+            background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/7d8916145399623.629e0696442be.png');
+            background-size:cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+        }
+
+        .hero-section h1 {
+            font-size: 66px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .card2 {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .card2 p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .button {
+  margin-top: 30px;
+}
+
+
+.post a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a5633156225521.59a5b6eea46ff.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 790px;
+  height:320px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  margin:10px;
+  
+}
+
+.category a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/1e85bb90282601.5e1387ca4f96b.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 790px;
+  height:320px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  margin:10px;
+  
+}
+
+.feed a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/9e15db161414795.63c53fa69b1bb.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 790px;
+  height:320px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  margin:10px;
+  transition: background-color 0.3s ease;
+}
+
+.feed a:hover{
+    transform: scale(1.1); /* Added scale transform on hover */
+}
+.post a:hover{
+    transform: scale(1.1); /* Added scale transform on hover */
+}
+.category a:hover{
+    transform: scale(1.1); /* Added scale transform on hover */
+}
+
+.button a:hover {
+  background-color: #000000;
+  size-adjust: 100rem;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+ 
+}
+
+.hometext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rightside {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background-color: rgb(90, 0, 142);
+    margin: 20px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.leftside {
+    display: flex;
+    width: 50%;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin: 20px;
+}
+     
+
+
+    </style>
+</head>
+<body>
+        <ul>
+          <li><a href="logout.html">Logout</a></li>
+          <li><a href="welcomepage.html">Home</a></li>
+          <li><a href="app">Feed</a></li>
+          <Li><a href="categories.html">Categories</a></Li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+
+    <div class="hero-section">
+        <h2>Welcome to</h2>
+        <h1>Beginner Social media</h1>
+        <p>A happy introduction to social media</p>
+
+    </div>
+    
+
+    
+    
+    
+    
+     <div class="flex">
+    
+        <div class="rightside">
+     <h2> Where to start</h2>
+     
+     <h3> Posting </h3>
+        <p> start with making a post</p>
+        <p> you can add captions and dont forget to add a category tag!</br> this will help other people to discover your posts!</p>
+        <p> Press upload, and see your post in your feed</p>
+        <p> you can also look at other peoples posts and like them!</p>
+     <h3> Inspiration </h3>
+        <p>look through popular categories or search by what you want to find </p>
+     <h3> Profile </h3>
+        <p>Dont forget to set up your profile </p>
+    
+    </div>
+
+    <div class="leftside">
+           <section>
+           <div class="feed">
+               <a href="app">View your feed</a>
+           </div>
+           <div class="post">
+               <a href="viewpost.html">Make a new post</a>
+           </div>
+           <div class="category">
+               <a href="categories.html">Look for inspiration</a>
+           </div>
+         </section>
+       </div>
+       
+    
+    </div>
+
+<div class="hometext">
+    <h2> We hope you have fun!</h2>
+ </div>
+
+</body>
+</html>

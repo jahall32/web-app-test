@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #post-img {
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Comment on Post</h2>
+    <nav>
+     
+      <a href="logout.html">Logout</a>
+      <Li><a href="welcomepage.html">Home</a></Li>
+      <a href="app">Application</a>
+    </nav>
+
+    <div>
+      <div id="post">
+        <img id="post-img" src="" alt="" />
+        <p><span>message:</span><span id="post-message"></span></p>
+      </div>
+      <form id="comment-form" action="/comment" method="POST">
+        <label>Comment</label>
+        <input type="text" id="message" name="message" /><br />
+        <input type="submit" value="Post Comment" />
+      </form>
+      <div id="comments">
+        <ul id="post-comments"></ul>
+      </div>
+    </div>
+
+    <script>
+      //get js pointers to the html elements
+      let postImage = document.querySelector("#post-img");
+      let postMessage = document.querySelector("#post-message");
+      let postComments = document.querySelector("#post-comments");
+
+      //get the postid from the url query string
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      let selectedPost = urlParams.get("post");
+
+      let form = document.querySelector("#comment-form");
+      //add a hidden form field with the postid in it
+      let hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", "postid");
+      hiddenField.setAttribute("value", selectedPost);
+      form.appendChild(hiddenField);
+
+      // Send comment form data as a post request with fetch
+      let options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ post: selectedPost }),
+      };
+      fetch("/getonepost", options)
+        .then((response) => response.json())
+        .then((serverResponse) => renderPost(serverResponse));
+
+      //render the retrieved post data in html
+      function renderPost(postData) {
+        console.log(postData);
+        // show image if present
+        if (postData.post.imagePath) {
+          postImage.src = postData.post.imagePath;
+          postImage.alt = "temporary alt tag";
+          postImage.classList.add("cl-post-image");
+        } else {
+          //render a null image?
+        }
+        postMessage.innerText = postData.post.message;
+        let comments = postData.post.comments;
+        if (comments.length > 0) {
+          //add a list of comments
+          let commentsUL = document.createElement("ul");
+          comments.forEach(function (comment) {
+            let commentLi = document.createElement("li");
+            let commentLiText = document.createElement("p");
+            commentLiText.textContent = `${comment.message} (by ${comment.user}) [likes:${comment.likes}]`;
+            //add like button and code to handle like later
+            commentLi.appendChild(commentLiText);
+            commentsUL.appendChild(commentLi);
+          });
+          postComments.appendChild(commentsUL);
+        }
+      }
+    </script>
+  </body>
+</html>

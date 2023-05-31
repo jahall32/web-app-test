@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <Link rel="stylesheet" href="post.css" />
+    <Link rel="stylesheet" href="poststyle.css" />
+
+
+    <title>Document</title>
+  </head>
+  
+    <ul>
+      <Li><a href="welcomepage.html">Home</a></Li>
+      <Li><a href="app">Posts</a></Li>
+      <Li><a href="categories.html">Categories</a></Li>
+      <Li><a href="profile.html">Profile</a></Li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+    
+    <style>
+      /* Restyling the search bar */
+
+      
+      .search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  height: 10rem;
+  
+}
+
+.search-container form {
+  display: flex;
+  align-items: center;
+  
+}
+
+#search-bar {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #ececec;
+}
+
+#search-bar:focus {
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  z-index: 0;
+}
+
+/* styling for current posts on page */
+
+.post {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 300px;
+}
+
+
+.wrapper{
+  margin-top: 10%;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+
+.cat{
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/11a6ab170711205.6462ebc896b88.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.cat:hover {
+  transform: scale(1.1); /* Added scale transform on hover */
+}
+.cat a{
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.food{
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/e9ba31168809817.644f6ad7c0ff6.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.food:hover {
+  transform: scale(1.1); /* Added scale transform on hover */
+}
+
+.food a{
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border: none;
+}
+
+.toys{
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a9637162164633.63d127954e8fa.png');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.toys:hover {
+  transform: scale(1.1); /* Added scale transform on hover */
+}
+
+.toys a{
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border: none;
+}
+
+
+  </style>
+
+<body>
+    <h1>Categories</h1>
+
+   
+    <div class="search-container">
+      <form onsubmit="searchPosts(event)">
+        <input type="text" placeholder="Search.." name="search" id="search-bar" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    
+    <div id="search-results"></div>
+    
+
+   
+    
+    <div class="wrapper">
+      
+      <div class="cat">
+        <a href="cats.html">Cats</a>
+      </div>
+
+      <div class="food">
+        <a href="food.html">Food</a>
+      </div>
+
+      <div class="toys">
+        <a href="toys.html">Toys</a>
+      </div>
+
+      
+
+</div>
+     
+<script src="scripts/categories.js"></script>
+
+  </body>
+</html>
